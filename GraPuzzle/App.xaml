@@ -1,0 +1,27 @@
+﻿<?xml version = "1.0" encoding = "UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:GraPuzzle"
+             x:Class="GraPuzzle.App">
+    <Application.Resources>
+        <Color x:Key="PuzzleColor">#4F46E5</Color>
+
+
+        <Style x:Key="PuzzleButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="{StaticResource PuzzleColor}" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="FontSize" Value="22" />
+            <Setter Property="CornerRadius" Value="20" />
+            <Setter Property="HeightRequest" Value="70" />
+            <Setter Property="WidthRequest" Value="70" />
+        </Style>
+
+
+        <Style x:Key="ResetButtonStyle" TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#DC2626" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="15" />
+            <Setter Property="FontAttributes" Value="Bold" />
+        </Style>
+    </Application.Resources>
+</Application>
