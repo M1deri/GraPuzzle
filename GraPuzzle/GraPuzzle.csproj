@@ -65,6 +65,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="dzieckopokoj.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="Puzzle1.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

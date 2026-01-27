@@ -2,32 +2,12 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.Puzzle1"
-             Title="Puzzle1">
+             Title="Puzzle1"
+             BackgroundImageSource="drzwi1.png">
     <VerticalStackLayout Padding="20" Spacing="15">
 
 
-        <Grid x:Name="TargetGrid"
-ColumnDefinitions="*,*,*"
-RowDefinitions="*,*,*"
-ColumnSpacing="10"
-RowSpacing="10" />
-
-
-        <Button Text="Reset"
-Clicked="OnResetClicked"
-Style="{StaticResource ResetButtonStyle}" />
-
-
-        <Label Text="Wybierz puzzel i kliknij inne pole aby je zamienić"
-HorizontalOptions="Center"
-TextColor="#666" />
-
-
-        <Grid x:Name="PuzzleGrid"
-ColumnDefinitions="*,*,*"
-RowDefinitions="*,*,*"
-ColumnSpacing="10"
-RowSpacing="10" />
+        
 
 
     </VerticalStackLayout>
