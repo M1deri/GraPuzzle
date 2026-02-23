@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GraPuzzle.dzieckopokoj"
-             Title="dzieckopokoj"
-             BackgroundImageSource="dziecko.png">
+             x:Class="GraPuzzle.piwnica_wejscie"
+             Title="piwnica_wejscie"
+             BackgroundImageSource="piwnica1.png">
     <Grid>
 
         <Button ImageSource="strzalka.png"
@@ -12,14 +12,14 @@
                 WidthRequest="60"
                 HeightRequest="60"
                 Rotation="180"
-                Clicked="OnLeftArrowClicked4"/>
+                Clicked="OnLeftArrowClicked3"/>
 
         <Button ImageSource="strzalka.png"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 WidthRequest="60"
                 HeightRequest="60"
-                Clicked="OnRightArrowClicked4"/>
+                Clicked="OnRightArrowClicked3"/>
 
     </Grid>
 </ContentPage>
