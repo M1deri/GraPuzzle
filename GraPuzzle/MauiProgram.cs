@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Logging;
+using Plugin.Maui.Audio;
 
 namespace GraPuzzle
 {
@@ -17,7 +18,9 @@ namespace GraPuzzle
 
 #if DEBUG
     		builder.Logging.AddDebug();
-#endif
+#endif     
+            builder.Services.AddSingleton(AudioManager.Current);
+            builder.Services.AddTransient<MainPage>();
 
             return builder.Build();
         }

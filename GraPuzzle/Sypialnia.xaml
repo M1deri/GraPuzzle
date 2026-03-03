@@ -20,5 +20,17 @@
                 HeightRequest="60"
                 Clicked="OnRightArrowClicked2"/>
 
+        <Button ImageSource="back_button.png"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="60"
+                HeightRequest="60"/>
+
+        <Button ImageSource="inventory_button.png"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="60"
+                HeightRequest="60"/>
+
     </Grid>
 </ContentPage>
