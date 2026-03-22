@@ -7,6 +7,7 @@
     <Grid>
 
         <Button ImageSource="strzalka.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 WidthRequest="60"
@@ -15,6 +16,7 @@
                 Clicked="OnLeftArrowClicked4"/>
 
         <Button ImageSource="strzalka.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 WidthRequest="60"
@@ -22,12 +24,14 @@
                 Clicked="OnRightArrowClicked4"/>
 
         <Button ImageSource="back_button.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 WidthRequest="80"
                 HeightRequest="80"/>
 
         <Button ImageSource="inventory_button.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 WidthRequest="80"

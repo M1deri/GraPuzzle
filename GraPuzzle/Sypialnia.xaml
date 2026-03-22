@@ -6,6 +6,7 @@
              BackgroundImageSource="sypialnia.png">
     <Grid>
         <Button ImageSource="strzalka.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="Start"
                 VerticalOptions="Center"
                 WidthRequest="60"
@@ -14,6 +15,7 @@
                 Clicked="OnLeftArrowClicked2"/>
 
         <Button ImageSource="strzalka.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 VerticalOptions="Center"
                 WidthRequest="60"
@@ -21,12 +23,14 @@
                 Clicked="OnRightArrowClicked2"/>
 
         <Button ImageSource="back_button.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="Start"
                 VerticalOptions="Start"
                 WidthRequest="60"
                 HeightRequest="60"/>
 
         <Button ImageSource="inventory_button.png"
+                BackgroundColor="Transparent"
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 WidthRequest="60"

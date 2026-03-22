@@ -1,83 +1,37 @@
-<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.Puzzle1"
-             Title="Puzzle1"
-             BackgroundImageSource="drzwi1.png">
+             Title="Puzzle1">
 
-    <Grid>
+    <AbsoluteLayout x:Name="MainLayout">
+
+        <Image Source="drzwi1.png"
+               AbsoluteLayout.LayoutBounds="0,0,1,1"
+               AbsoluteLayout.LayoutFlags="All"/>
+
         <Label x:Name="CodeDisplay"
-           Text="____"
-           FontSize="30"
-           HorizontalOptions="Center"
-           VerticalOptions="End"
-           Margin="0,0,0,200"
-           TextColor="White"/>
-        <Button BackgroundColor="Transparent"
-            BorderWidth="0"
-            WidthRequest="100"
-            HeightRequest="100"
-            HorizontalOptions="Center"
-            VerticalOptions="Start"
-            Margin="0,100,0,0"
-            Clicked="OnHeartClicked"/>
-
-        <!-- Klawiatura -->
-        <Grid VerticalOptions="End" Margin="140,0,0,50"
-          RowDefinitions="Auto,Auto,Auto,Auto"
-          ColumnDefinitions="Auto,Auto,Auto">
-
-            <!-- Rząd 1 -->
-            <Button Text="1" Grid.Row="0" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="2" Grid.Row="0" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="3" Grid.Row="0" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-
-            <!-- Rząd 2 -->
-            <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="6" Grid.Row="1" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-
-            <!-- Rząd 3 -->
-            <Button Text="7" Grid.Row="2" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="8" Grid.Row="2" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="9" Grid.Row="2" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-
-            <!-- Rząd 4 -->
-            <Button Text="C" Grid.Row="3" Grid.Column="0" Clicked="OnClearClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-            <Button Text="OK" Grid.Row="3" Grid.Column="2" Clicked="OnOkClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
-
-        </Grid>
-
+               Text="____"
+               FontSize="30"
+               TextColor="White"
+               HorizontalTextAlignment="Center"
+               AbsoluteLayout.LayoutBounds="0.5,0.7,0.4,0.1"
+               AbsoluteLayout.LayoutFlags="All"/>
 
         <Button ImageSource="strzalka.png"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                BackgroundColor="Transparent"
+                BorderWidth="0"
+                AbsoluteLayout.LayoutBounds="0.05,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Rotation="180"
                 Clicked="OnLeftArrowClicked1"/>
 
         <Button ImageSource="strzalka.png"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                BackgroundColor="Transparent"
+                BorderWidth="0"
+                AbsoluteLayout.LayoutBounds="0.95,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnRightArrowClicked1"/>
 
-
-        <Button ImageSource="back_button.png"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                WidthRequest="60"
-                HeightRequest="60"/>
-
-        <Button ImageSource="inventory_button.png"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="60"
-                HeightRequest="60"/>
-
-    </Grid>
+    </AbsoluteLayout>
 
 </ContentPage>

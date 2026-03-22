@@ -1,51 +1,149 @@
-﻿namespace GraPuzzle;
+﻿using Microsoft.Maui.Controls;
+using Microsoft.Maui.Graphics;
+using Microsoft.Maui.Dispatching;
+
+namespace GraPuzzle;
 
 public partial class Puzzle1 : ContentPage
 {
     private string enteredCode = "";
-    private const string correctCode = "1234";
-    private bool key = false;
+    private const string correctCode = "6767";
 
     public Puzzle1()
     {
         InitializeComponent();
-    }
-    private void OnNumberClicked(object sender, EventArgs e)
-    {
-        var button = sender as Button;
 
-        if (enteredCode.Length < 4)
+        this.Loaded += (s, e) =>
         {
-            enteredCode += button.Text;
-            UpdateDisplay();
+            AddKeypadHotspots();
+            AddObjectHotspots();
+        };
+    }
+
+    private void AddKeypadHotspots()
+    {
+        AddKey("1", 0.38, 0.735, 0.07, 0.025);
+        AddKey("2", 0.46, 0.735, 0.07, 0.025);
+        AddKey("3", 0.54, 0.735, 0.07, 0.025);
+
+        AddKey("4", 0.38, 0.767, 0.07, 0.025);
+        AddKey("5", 0.46, 0.767, 0.07, 0.025);
+        AddKey("6", 0.54, 0.767, 0.07, 0.025);
+
+        AddKey("7", 0.38, 0.798, 0.07, 0.025);
+        AddKey("8", 0.46, 0.798, 0.07, 0.025);
+        AddKey("9", 0.54, 0.798, 0.07, 0.025);
+
+        AddKey("C", 0.62, 0.735, 0.07, 0.025);
+        AddKey("0", 0.62, 0.767, 0.07, 0.025);
+        AddKey("OK", 0.62, 0.798, 0.07, 0.025);
+    }
+
+    private void AddKey(string value, double xCenter, double yCenter, double widthProp, double heightProp)
+    {
+        var box = new BoxView
+        {
+            Color = Colors.Red.WithAlpha(0.3f),
+            InputTransparent = false
+        };
+
+        var tap = new TapGestureRecognizer();
+        tap.Tapped += (s, e) => OnKeyPressed(value);
+        box.GestureRecognizers.Add(tap);
+
+        MainLayout.Children.Add(box);
+
+        SetBoxBounds(box, xCenter, yCenter, widthProp, heightProp);
+    }
+
+    private async void OnKeyPressed(string key)
+    {
+        if (key == "C")
+        {
+            enteredCode = "";
         }
-    }
-    private void OnClearClicked(object sender, EventArgs e)
-    {
-        enteredCode = "";
-        UpdateDisplay();
-    }
-
-    private async void OnOkClicked(object sender, EventArgs e)
-    {
-        if (enteredCode == correctCode)
+        else if (key == "OK")
         {
-            await DisplayAlert("Sukces", "Kod poprawny!", "OK");
-
-           
-            await Navigation.PushAsync(new Sypialnia());
+            if (enteredCode == correctCode)
+            {
+                await DisplayAlert("Sukces", "Kod poprawny!", "OK");
+                await Navigation.PushAsync(new Sypialnia());
+                return;
+            }
+            else
+            {
+                await DisplayAlert("Błąd", "Zły kod!", "OK");
+                enteredCode = "";
+            }
         }
         else
         {
-            await DisplayAlert("Błąd", "Zły kod!", "OK");
-            enteredCode = "";
-            UpdateDisplay();
+            if (enteredCode.Length < 4)
+                enteredCode += key;
         }
+
+        UpdateDisplay();
     }
+
     private void UpdateDisplay()
     {
         CodeDisplay.Text = enteredCode.PadRight(4, '_');
     }
+
+    private void AddObjectHotspots()
+    {
+        // xCenter, yCenter, widthProp, heightProp
+        AddHotspot("heart", 0.5, 0.275, 0.22, 0.14);
+        AddHotspot("skull", 0.5, 0.41, 0.18, 0.11);
+        AddHotspot("doll", 0.5, 0.57, 0.2, 0.18);
+    }
+
+    private void AddHotspot(string id, double xCenter, double yCenter, double widthProp, double heightProp)
+    {
+        var box = new BoxView
+        {
+            Color = Colors.Red.WithAlpha(0.3f),
+            InputTransparent = false
+        };
+
+        var tap = new TapGestureRecognizer();
+        tap.Tapped += (s, e) => OnHotspotTapped(id);
+        box.GestureRecognizers.Add(tap);
+
+        MainLayout.Children.Add(box);
+
+        SetBoxBounds(box, xCenter, yCenter, widthProp, heightProp);
+    }
+
+    private void SetBoxBounds(BoxView box, double xCenter, double yCenter, double widthProp, double heightProp)
+    {
+        Dispatcher.Dispatch(() =>
+        {
+            var width = MainLayout.Width * widthProp;
+            var height = MainLayout.Height * heightProp;
+            var x = MainLayout.Width * xCenter - width / 2;
+            var y = MainLayout.Height * yCenter - height / 2;
+
+            AbsoluteLayout.SetLayoutBounds(box, new Rect(x, y, width, height));
+        });
+    }
+
+    private async void OnHotspotTapped(string id)
+    {
+        switch (id)
+        {
+            case "heart":
+                await DisplayAlert("Serce", "nie masz klucza", "OK");
+                break;
+            case "skull":
+                await DisplayAlert("Czaszka", "ten tego", "OK");
+                break;
+            case "doll":
+                await DisplayAlert("Lalka", "sralka", "OK");
+                break;
+        }
+    }
+
     private async void OnLeftArrowClicked1(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new dzieckopokoj());
@@ -54,17 +152,5 @@ public partial class Puzzle1 : ContentPage
     private async void OnRightArrowClicked1(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Sypialnia());
-    }
-
-    private void OnHeartClicked(object sender, EventArgs e)
-    {
-        if (key){
-            DisplayAlert("cwel", "pedal", "OK");
-        }
-        else
-        {
-            DisplayAlert("Stop", "Nie posiadasz klucza", "OK");
-        }
-       
     }
 }
