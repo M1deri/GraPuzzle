@@ -6,6 +6,49 @@
              BackgroundImageSource="drzwi1.png">
 
     <Grid>
+        <Label x:Name="CodeDisplay"
+           Text="____"
+           FontSize="30"
+           HorizontalOptions="Center"
+           VerticalOptions="End"
+           Margin="0,0,0,200"
+           TextColor="White"/>
+        <Button BackgroundColor="Transparent"
+            BorderWidth="0"
+            WidthRequest="100"
+            HeightRequest="100"
+            HorizontalOptions="Center"
+            VerticalOptions="Start"
+            Margin="0,100,0,0"
+            Clicked="OnHeartClicked"/>
+
+        <!-- Klawiatura -->
+        <Grid VerticalOptions="End" Margin="140,0,0,50"
+          RowDefinitions="Auto,Auto,Auto,Auto"
+          ColumnDefinitions="Auto,Auto,Auto">
+
+            <!-- Rząd 1 -->
+            <Button Text="1" Grid.Row="0" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="2" Grid.Row="0" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="3" Grid.Row="0" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+
+            <!-- Rząd 2 -->
+            <Button Text="4" Grid.Row="1" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="5" Grid.Row="1" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="6" Grid.Row="1" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+
+            <!-- Rząd 3 -->
+            <Button Text="7" Grid.Row="2" Grid.Column="0" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="8" Grid.Row="2" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="9" Grid.Row="2" Grid.Column="2" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+
+            <!-- Rząd 4 -->
+            <Button Text="C" Grid.Row="3" Grid.Column="0" Clicked="OnClearClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="0" Grid.Row="3" Grid.Column="1" Clicked="OnNumberClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+            <Button Text="OK" Grid.Row="3" Grid.Column="2" Clicked="OnOkClicked" BackgroundColor="Transparent" BorderWidth="0" Padding="10"/>
+
+        </Grid>
+
 
         <Button ImageSource="strzalka.png"
                 HorizontalOptions="Start"

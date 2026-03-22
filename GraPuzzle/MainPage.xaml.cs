@@ -14,8 +14,8 @@ namespace GraPuzzle
         private async void OnPlayClicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new Puzzle1());
-            var player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("7f587cb8-069b-4488-bf3a-c31d9a940272.mp3"));
-            player.Play();
+            //var player = audioManager.CreatePlayer(await FileSystem.OpenAppPackageFileAsync("7f587cb8-069b-4488-bf3a-c31d9a940272.mp3"));
+            //player.Play();
         }
         private async void OnSettingsClicked(object sender, EventArgs e)
         {
