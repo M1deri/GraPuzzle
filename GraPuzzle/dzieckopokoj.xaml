@@ -4,38 +4,52 @@
              x:Class="GraPuzzle.dzieckopokoj"
              Title="dzieckopokoj"
              BackgroundImageSource="dziecko.png">
-    <Grid>
+
+    <AbsoluteLayout x:Name="MainLayout">
+
+        <Button BackgroundColor="Red"
+                AbsoluteLayout.LayoutBounds="0.6,0.38,0.05,0.05"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnBlocksClicked"/>
+
+        <Button BackgroundColor="#3000FF00"
+                AbsoluteLayout.LayoutBounds="0.65,0.38,0.05,0.05"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnBearClicked"/>
+
+        <Button BackgroundColor="red"
+                AbsoluteLayout.LayoutBounds="0.71,0.38,0.055,0.05"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnTableClicked"/>
+
+        <Button BackgroundColor="Transparent"
+                AbsoluteLayout.LayoutBounds="0.77,0.39,0.055,0.05"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnChestClicked"/>
 
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="0.05,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Rotation="180"
                 Clicked="OnLeftArrowClicked4"/>
 
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="0.95,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnRightArrowClicked4"/>
+
 
         <Button ImageSource="back_button.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                WidthRequest="80"
-                HeightRequest="80"/>
+                AbsoluteLayout.LayoutBounds="0.05,0.05,80,80"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
         <Button ImageSource="inventory_button.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="80"
-                HeightRequest="80"/>
+                AbsoluteLayout.LayoutBounds="0.95,0.05,80,80"
+                AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
-    </Grid>
+    </AbsoluteLayout>
 </ContentPage>

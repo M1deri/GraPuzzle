@@ -92,7 +92,6 @@ public partial class Puzzle1 : ContentPage
 
     private void AddObjectHotspots()
     {
-        // xCenter, yCenter, widthProp, heightProp
         AddHotspot("heart", 0.5, 0.275, 0.22, 0.14);
         AddHotspot("skull", 0.5, 0.41, 0.18, 0.11);
         AddHotspot("doll", 0.5, 0.57, 0.2, 0.18);
@@ -133,13 +132,24 @@ public partial class Puzzle1 : ContentPage
         switch (id)
         {
             case "heart":
-                await DisplayAlert("Serce", "nie masz klucza", "OK");
+
+                if (Inventory.Has("Key"))
+                {
+                    await DisplayAlert("Serce", "Kłódka otwarta!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Serce", "Nie masz klucza", "OK");
+                }
+
                 break;
+
             case "skull":
-                await DisplayAlert("Czaszka", "ten tego", "OK");
+                await DisplayAlert("Czaszka", "Trochę straszna...", "OK");
                 break;
+
             case "doll":
-                await DisplayAlert("Lalka", "sralka", "OK");
+                await DisplayAlert("Lalka", "Patrzy się na ciebie...", "OK");
                 break;
         }
     }
