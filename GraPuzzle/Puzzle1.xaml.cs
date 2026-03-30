@@ -67,7 +67,7 @@ public partial class Puzzle1 : ContentPage
             if (enteredCode == correctCode)
             {
                 await DisplayAlert("Sukces", "Kod poprawny!", "OK");
-                await Navigation.PushAsync(new Sypialnia());
+                await Navigation.PushAsync(new end());
                 return;
             }
             else
