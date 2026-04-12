@@ -84,7 +84,7 @@ public partial class Sypialnia : ContentPage
             "Obrazy lekko przesunęły się ze ściany.\nZa jeleniem kryła się mała wnęka — a w niej...\nStary, zardzewiały klucz!",
             "OK");
 
-        Inventory.Add("Key");
+        Inventory.Add("Heart Key");
     }
 
     private void ResetSequence()

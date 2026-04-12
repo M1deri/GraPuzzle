@@ -23,7 +23,7 @@ public partial class dzieckopokoj : ContentPage
         {
             puzzleSolved = true;
             await DisplayAlert("Sukces!", "Zdoby³eœ klucz", "OK");
-            Inventory.Add("Key");
+            Inventory.Add("Baby Key");
         }
     }
 

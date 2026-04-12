@@ -4,9 +4,9 @@ public partial class InventoryPage : ContentPage
 {
     private static readonly Dictionary<string, string> ItemIcons = new()
     {
-        { "Key",       "🗝" },
+        { "Heart Key",       "🗝" },
         { "Note",      "📜" },
-        { "Flashlight","🔦" },
+        { "Baby Key", "🗝" },
         { "Map",       "🗺" },
     };
 

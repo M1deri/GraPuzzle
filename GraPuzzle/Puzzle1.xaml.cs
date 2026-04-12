@@ -128,13 +128,13 @@ public partial class Puzzle1 : ContentPage
         {
             case "heart":
 
-                if (Inventory.Has("Key"))
+                if (Inventory.Has("Heart Key"))
                 {
                     await DisplayAlert("Serce", "Kłódka otwarta!", "OK");
                 }
                 else
                 {
-                    await DisplayAlert("Serce", "Nie masz klucza", "OK");
+                    await DisplayAlert("Serce", "Nie masz odpowiedniego klucza", "OK");
                 }
 
                 break;
@@ -144,7 +144,14 @@ public partial class Puzzle1 : ContentPage
                 break;
 
             case "doll":
-                await DisplayAlert("Lalka", "Patrzy się na ciebie...", "OK");
+                if (Inventory.Has("Baby Key"))
+                {
+                    await DisplayAlert("Lalka", "Kłódka otwarta!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Lalka", "Nie masz odpowiedniego klucza", "OK");
+                }
                 break;
         }
     }
