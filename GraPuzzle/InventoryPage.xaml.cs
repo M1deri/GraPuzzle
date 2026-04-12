@@ -2,7 +2,6 @@ namespace GraPuzzle;
 
 public partial class InventoryPage : ContentPage
 {
-    // Słownik: nazwa przedmiotu -> emoji ikona
     private static readonly Dictionary<string, string> ItemIcons = new()
     {
         { "Key",       "🗝" },
@@ -28,7 +27,7 @@ public partial class InventoryPage : ContentPage
         foreach (var item in Inventory.Items)
         {
             var icon = ItemIcons.TryGetValue(item, out var emoji) ? emoji : "📦";
-            var card = BuildItemCard(icon, TranslateName(item));
+            var card = BuildItemCard(icon, item);
             ItemsContainer.Add(card);
         }
     }
@@ -65,16 +64,6 @@ public partial class InventoryPage : ContentPage
             }
         };
     }
-
-    // Tłumaczenie nazw przedmiotów na polski
-    private static string TranslateName(string item) => item switch
-    {
-        "Key"        => "Klucz",
-        "Note"       => "Notatka",
-        "Flashlight" => "Latarka",
-        "Map"        => "Mapa",
-        _            => item
-    };
 
     private async void OnCloseClicked(object sender, EventArgs e)
     {

@@ -7,17 +7,17 @@
 
     <AbsoluteLayout x:Name="MainLayout">
 
-        <Button BackgroundColor="Red"
+        <Button BackgroundColor="Transparent"
                 AbsoluteLayout.LayoutBounds="0.6,0.38,0.05,0.05"
                 AbsoluteLayout.LayoutFlags="All"
                 Clicked="OnBlocksClicked"/>
 
-        <Button BackgroundColor="#3000FF00"
+        <Button BackgroundColor="Transparent"
                 AbsoluteLayout.LayoutBounds="0.65,0.38,0.05,0.05"
                 AbsoluteLayout.LayoutFlags="All"
                 Clicked="OnBearClicked"/>
 
-        <Button BackgroundColor="red"
+        <Button BackgroundColor="Transparent"
                 AbsoluteLayout.LayoutBounds="0.71,0.38,0.055,0.05"
                 AbsoluteLayout.LayoutFlags="All"
                 Clicked="OnTableClicked"/>
@@ -43,12 +43,12 @@
 
         <Button ImageSource="back_button.png"
                 BackgroundColor="Transparent"
-                AbsoluteLayout.LayoutBounds="0.05,0.05,80,80"
+                AbsoluteLayout.LayoutBounds="0,0,80,80"
                 AbsoluteLayout.LayoutFlags="PositionProportional"/>
 
         <Button ImageSource="inventory_button.png"
                 BackgroundColor="Transparent"
-                AbsoluteLayout.LayoutBounds="0.95,0.05,80,80"
+                AbsoluteLayout.LayoutBounds="1,0,80,80"
                 AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnInventoryClicked"/>
 

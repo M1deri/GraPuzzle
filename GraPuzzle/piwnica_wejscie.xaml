@@ -35,7 +35,8 @@
                 HorizontalOptions="End"
                 VerticalOptions="Start"
                 WidthRequest="80"
-                HeightRequest="80"/>
+                HeightRequest="80"
+                Clicked="OnInventoryClicked"/>
 
     </Grid>
 </ContentPage>

@@ -15,4 +15,8 @@ public partial class piwnica_wejscie : ContentPage
     {
         await Navigation.PushAsync(new dzieckopokoj());
     }
+    private async void OnInventoryClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new InventoryPage());
+    }
 }

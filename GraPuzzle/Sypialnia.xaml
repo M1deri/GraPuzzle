@@ -4,37 +4,88 @@
              x:Class="GraPuzzle.Sypialnia"
              Title="Sypialnia"
              BackgroundImageSource="sypialnia.png">
-    <Grid>
+
+    <AbsoluteLayout>
+
+        <!-- OBRAZ 1: Kruk (lewy) -->
+        <Button BackgroundColor="Transparent"
+                AbsoluteLayout.LayoutBounds="0.36,0.1,0.195,0.127"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnRavenClicked"/>
+
+        <!-- OBRAZ 2: Jeleń (środkowy) -->
+        <Button BackgroundColor="Transparent"
+                AbsoluteLayout.LayoutBounds="0.65,0.1,0.195,0.127"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnDeerClicked"/>
+
+        <!-- OBRAZ 3: Koza (prawy) -->
+        <Button BackgroundColor="Transparent"
+                AbsoluteLayout.LayoutBounds="0.92,0.1,0.195,0.127"
+                AbsoluteLayout.LayoutFlags="All"
+                Clicked="OnGoatClicked"/>
+
+        <!-- PODŚWIETLENIE kruka (aktywne gdy kliknięty) -->
+        <BoxView x:Name="RavenHighlight"
+                 Color="#80FFD700"
+                 IsVisible="False"
+                 AbsoluteLayout.LayoutBounds="0.36,0.1,0.195,0.127"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+        <!-- PODŚWIETLENIE jelenia -->
+        <BoxView x:Name="DeerHighlight"
+                 Color="#80FFD700"
+                 IsVisible="False"
+                 AbsoluteLayout.LayoutBounds="0.65,0.1,0.195,0.127"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+        <!-- PODŚWIETLENIE kozy -->
+        <BoxView x:Name="GoatHighlight"
+                 Color="#80FFD700"
+                 IsVisible="False"
+                 AbsoluteLayout.LayoutBounds="0.92,0.1,0.195,0.127"
+                 AbsoluteLayout.LayoutFlags="All"/>
+
+        <!-- LICZNIK kolejności (debug, możesz ukryć) -->
+        <Label x:Name="SequenceLabel"
+               Text=""
+               TextColor="White"
+               FontSize="13"
+               BackgroundColor="#88000000"
+               Padding="6,2"
+               AbsoluteLayout.LayoutBounds="0.5,0.3,0.5,0.06"
+               AbsoluteLayout.LayoutFlags="All"
+               HorizontalTextAlignment="Center"
+               IsVisible="False"/>
+
+        <!-- STRZAŁKA LEWA -->
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="Start"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="0.05,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Rotation="180"
                 Clicked="OnLeftArrowClicked2"/>
 
+        <!-- STRZAŁKA PRAWA -->
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="End"
-                VerticalOptions="Center"
-                WidthRequest="60"
-                HeightRequest="60"
+                AbsoluteLayout.LayoutBounds="0.95,0.5,60,60"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
                 Clicked="OnRightArrowClicked2"/>
 
+        <!-- PRZYCISK WSTECZ -->
         <Button ImageSource="back_button.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="Start"
-                VerticalOptions="Start"
-                WidthRequest="60"
-                HeightRequest="60"/>
+                AbsoluteLayout.LayoutBounds="0.0,0.0,80,80"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnBackClicked"/>
 
+        <!-- PRZYCISK EKWIPUNKU -->
         <Button ImageSource="inventory_button.png"
                 BackgroundColor="Transparent"
-                HorizontalOptions="End"
-                VerticalOptions="Start"
-                WidthRequest="60"
-                HeightRequest="60"/>
+                AbsoluteLayout.LayoutBounds="1,0,80,80"
+                AbsoluteLayout.LayoutFlags="PositionProportional"
+                Clicked="OnInventoryClicked"/>
 
-    </Grid>
+    </AbsoluteLayout>
 </ContentPage>

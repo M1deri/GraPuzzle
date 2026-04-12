@@ -26,17 +26,16 @@ public partial class Puzzle1 : ContentPage
         AddKey("2", 0.46, 0.735, 0.07, 0.025);
         AddKey("3", 0.54, 0.735, 0.07, 0.025);
 
-        AddKey("4", 0.38, 0.767, 0.07, 0.025);
-        AddKey("5", 0.46, 0.767, 0.07, 0.025);
-        AddKey("6", 0.54, 0.767, 0.07, 0.025);
+        AddKey("4", 0.62, 0.735, 0.07, 0.025);   
+        AddKey("5", 0.38, 0.767, 0.07, 0.025); 
+        AddKey("6", 0.46, 0.767, 0.07, 0.025); 
 
-        AddKey("7", 0.38, 0.798, 0.07, 0.025);
-        AddKey("8", 0.46, 0.798, 0.07, 0.025);
-        AddKey("9", 0.54, 0.798, 0.07, 0.025);
+        AddKey("7", 0.54, 0.767, 0.07, 0.025); 
+        AddKey("8", 0.62, 0.767, 0.07, 0.025); 
+        AddKey("9", 0.38, 0.798, 0.07, 0.025);
 
-        AddKey("C", 0.62, 0.735, 0.07, 0.025);
-        AddKey("0", 0.62, 0.767, 0.07, 0.025);
-        AddKey("OK", 0.62, 0.798, 0.07, 0.025);
+        AddKey("0", 0.46, 0.798, 0.07, 0.025);
+        AddKey("OK", 0.574, 0.798, 0.128, 0.025);
     }
 
     private void AddKey(string value, double xCenter, double yCenter, double widthProp, double heightProp)
@@ -58,11 +57,7 @@ public partial class Puzzle1 : ContentPage
 
     private async void OnKeyPressed(string key)
     {
-        if (key == "C")
-        {
-            enteredCode = "";
-        }
-        else if (key == "OK")
+        if (key == "OK")
         {
             if (enteredCode == correctCode)
             {
@@ -162,5 +157,9 @@ public partial class Puzzle1 : ContentPage
     private async void OnRightArrowClicked1(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Sypialnia());
+    }
+    private async void OnInventoryClicked(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new InventoryPage());
     }
 }
