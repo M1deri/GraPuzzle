@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GraPuzzle.InventoryPage"
+             Title="Ekwipunek"
+             BackgroundColor="#1a0a00">
+
+    <Grid RowDefinitions="Auto,*,Auto"
+          Padding="24,48,24,32">
+
+        <!-- NAGŁÓWEK -->
+        <VerticalStackLayout Grid.Row="0" Spacing="4" Margin="0,0,0,24">
+            <Label Text="⚔ EKWIPUNEK"
+                   FontSize="28"
+                   FontAttributes="Bold"
+                   TextColor="#d4a84b"
+                   HorizontalOptions="Center"
+                   CharacterSpacing="6"/>
+            <BoxView HeightRequest="2"
+                     Color="#d4a84b"
+                     Opacity="0.5"
+                     Margin="32,8"/>
+        </VerticalStackLayout>
+
+        <!-- LISTA PRZEDMIOTÓW -->
+        <ScrollView Grid.Row="1">
+            <VerticalStackLayout x:Name="ItemsContainer"
+                                 Spacing="12"
+                                 Padding="0,4"/>
+        </ScrollView>
+
+        <!-- PUSTY EKWIPUNEK (widoczny gdy brak przedmiotów) -->
+        <VerticalStackLayout x:Name="EmptyLabel"
+                             Grid.Row="1"
+                             IsVisible="False"
+                             VerticalOptions="Center"
+                             HorizontalOptions="Center"
+                             Spacing="12">
+            <Label Text="Ekwipunek"
+                   FontSize="56"
+                   HorizontalOptions="Center"/>
+            <Label Text="Ekwipunek jest pusty"
+                   FontSize="16"
+                   TextColor="#7a5c3a"
+                   HorizontalOptions="Center"
+                   CharacterSpacing="2"/>
+        </VerticalStackLayout>
+
+        <!-- PRZYCISK ZAMKNIJ -->
+        <Button Grid.Row="2"
+                Text="ZAMKNIJ"
+                Clicked="OnCloseClicked"
+                BackgroundColor="#d4a84b"
+                TextColor="#1a0a00"
+                FontAttributes="Bold"
+                FontSize="15"
+                CharacterSpacing="4"
+                CornerRadius="8"
+                HeightRequest="52"
+                Margin="0,16,0,0"/>
+    </Grid>
+
+</ContentPage>

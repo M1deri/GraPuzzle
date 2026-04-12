@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GraPuzzle
 {
-    internal class Inventory
+    public class Inventory
     {
         public static List<string> Items = new();
         public static void Add(string item)
