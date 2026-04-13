@@ -8,12 +8,12 @@ public partial class piwnica_wejscie : ContentPage
 	}
     private async void OnLeftArrowClicked3(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Sypialnia());
+        await Navigation.PushAsync(new dzieckopokoj());
     }
 
     private async void OnRightArrowClicked3(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new dzieckopokoj());
+        await Navigation.PushAsync(new Sypialnia());
     }
     private async void OnInventoryClicked(object sender, EventArgs e)
     {

@@ -156,12 +156,12 @@ public partial class Puzzle1 : ContentPage
         }
     }
 
-    private async void OnLeftArrowClicked1(object sender, EventArgs e)
+    private async void OnRightArrowClicked1(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new dzieckopokoj());
     }
 
-    private async void OnRightArrowClicked1(object sender, EventArgs e)
+    private async void OnLeftArrowClicked1(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Sypialnia());
     }

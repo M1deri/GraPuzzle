@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.piwnica_wejscie"
              Title="piwnica_wejscie"
-             BackgroundImageSource="piwnica1.png">
+             BackgroundImageSource="piwnica2.png">
     <Grid>
 
         <Button ImageSource="strzalka.png"
@@ -37,6 +37,7 @@
                 WidthRequest="80"
                 HeightRequest="80"
                 Clicked="OnInventoryClicked"/>
+        
 
     </Grid>
 </ContentPage>

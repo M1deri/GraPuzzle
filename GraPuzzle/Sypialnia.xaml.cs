@@ -118,14 +118,14 @@ public partial class Sypialnia : ContentPage
 
     // ── NAWIGACJA ───────────────────────────────────────────────────────
 
-    private async void OnLeftArrowClicked2(object sender, EventArgs e)
-    {
-        await Navigation.PopAsync();
-    }
-
     private async void OnRightArrowClicked2(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new dzieckopokoj());
+        await Navigation.PushAsync(new Puzzle1());
+    }
+
+    private async void OnLeftArrowClicked2(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new piwnica_wejscie());
     }
 
     private async void OnBackClicked(object sender, EventArgs e)

@@ -108,12 +108,12 @@ public partial class dzieckopokoj : ContentPage
 
     private async void OnLeftArrowClicked4(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Sypialnia());
+        await Navigation.PushAsync(new Puzzle1());
     }
 
     private async void OnRightArrowClicked4(object sender, EventArgs e)
     {
-        await Navigation.PushAsync(new Puzzle1());
+        await Navigation.PushAsync(new piwnica_wejscie());
     }
 
     private async void OnInventoryClicked(object sender, EventArgs e)
