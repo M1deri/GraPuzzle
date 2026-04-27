@@ -4,7 +4,9 @@
              x:Class="GraPuzzle.end"
              Title="end"
              BackgroundImageSource="zadrzwiamiend.png">
-    <VerticalStackLayout>
-        <Label Text="The End?"/>
+    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
+        <Label Text="The End?" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+        </HorizontalStackLayout>
     </VerticalStackLayout>
 </ContentPage>

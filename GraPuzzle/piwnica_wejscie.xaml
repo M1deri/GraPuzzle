@@ -37,7 +37,13 @@
                 WidthRequest="80"
                 HeightRequest="80"
                 Clicked="OnInventoryClicked"/>
-        
+        <Button
+        BackgroundColor="Transparent"
+        Clicked="Button_Clicked"
+            WidthRequest="130"
+            HeightRequest="300"/>
 
     </Grid>
+    
+
 </ContentPage>

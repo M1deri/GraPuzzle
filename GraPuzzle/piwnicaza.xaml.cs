@@ -1,8 +1,8 @@
 namespace GraPuzzle;
 
-public partial class piwnica_wejscie : ContentPage
+public partial class piwnicaza : ContentPage
 {
-	public piwnica_wejscie()
+	public piwnicaza()
 	{
 		InitializeComponent();
 	}
@@ -20,8 +20,17 @@ public partial class piwnica_wejscie : ContentPage
         await Navigation.PushModalAsync(new InventoryPage());
     }
 
-    private async void Button_Clicked(object sender, EventArgs e)
+    private void Button_Clicked(object sender, EventArgs e)
     {
-         await Navigation.PushModalAsync(new piwnicaziemia());
+        Navigation.PushModalAsync(new Puzzle1());
+    }
+
+    private void Button_Clicked_1(object sender, EventArgs e)
+    {
+        DisplayAlert(
+            "Sukces!",
+            "Trumna zosta³a otwarta.\nKryje siê w niej klucz w kszta³cie czaszki i\nKod 6767",
+            "OK");
+        Inventory.Add("Skool Key");
     }
 }

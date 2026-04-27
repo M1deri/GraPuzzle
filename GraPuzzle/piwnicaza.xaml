@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GraPuzzle.piwnicaza"
+             Title="piwnicaza"
+             BackgroundImageSource="piwnica3.png">
+    <Grid>
+
+        
+
+        <Button ImageSource="back_button.png"
+             BackgroundColor="Transparent"
+             HorizontalOptions="Start"
+             VerticalOptions="Start"
+             WidthRequest="80"
+             HeightRequest="80"
+                Clicked="Button_Clicked"/>
+
+        <Button ImageSource="inventory_button.png"
+             BackgroundColor="Transparent"
+             HorizontalOptions="End"
+             VerticalOptions="Start"
+             WidthRequest="80"
+             HeightRequest="80"
+             Clicked="OnInventoryClicked"/>
+        <Button
+            BackgroundColor="Transparent"
+                        WidthRequest="130"
+            HeightRequest="300"
+            Clicked="Button_Clicked_1"/>
+        
+
+
+    </Grid>
+</ContentPage>

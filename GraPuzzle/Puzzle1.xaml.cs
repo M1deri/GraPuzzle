@@ -96,7 +96,7 @@ public partial class Puzzle1 : ContentPage
     {
         var box = new BoxView
         {
-            Color = Colors.Red.WithAlpha(0.3f),
+            
             InputTransparent = false
         };
 
@@ -141,6 +141,14 @@ public partial class Puzzle1 : ContentPage
 
             case "skull":
                 await DisplayAlert("Czaszka", "Trochę straszna...", "OK");
+                if (Inventory.Has("Skool Key"))
+                {
+                    await DisplayAlert("Czaszka", "Kłódka otwarta!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("", "Nie masz odpowiedniego klucza", "OK");
+                }
                 break;
 
             case "doll":

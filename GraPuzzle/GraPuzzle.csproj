@@ -72,6 +72,12 @@
 	  <MauiXaml Update="end.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="piwnicaza.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="piwnicaziemia.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="piwnica_wejscie.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

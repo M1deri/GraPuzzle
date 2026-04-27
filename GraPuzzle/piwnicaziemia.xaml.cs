@@ -1,8 +1,8 @@
 namespace GraPuzzle;
 
-public partial class piwnica_wejscie : ContentPage
+public partial class piwnicaziemia : ContentPage
 {
-	public piwnica_wejscie()
+	public piwnicaziemia()
 	{
 		InitializeComponent();
 	}
@@ -19,9 +19,13 @@ public partial class piwnica_wejscie : ContentPage
     {
         await Navigation.PushModalAsync(new InventoryPage());
     }
-
     private async void Button_Clicked(object sender, EventArgs e)
     {
-         await Navigation.PushModalAsync(new piwnicaziemia());
+        await Navigation.PushModalAsync(new piwnicaza());
+    }
+
+    private async void Button_Clicked_1(object sender, EventArgs e)
+    {
+        await Navigation.PushModalAsync(new piwnica_wejscie());
     }
 }

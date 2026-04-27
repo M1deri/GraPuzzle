@@ -9,8 +9,8 @@
         <Label Text="PUZZLE GAME" FontSize="32" HorizontalOptions="Center" />
 
 
-        <Button Text="Graj" Clicked="OnPlayClicked" BackgroundColor="Transparent"/>
-        <Button Text="Ustawienia" Clicked="OnSettingsClicked" BackgroundColor="Transparent"/>
+        <Button  Clicked="OnPlayClicked" ImageSource="przycisk_play.png" BackgroundColor="Transparent" WidthRequest="400" HeightRequest="200"/>
+
     </VerticalStackLayout>
 
 </ContentPage>
