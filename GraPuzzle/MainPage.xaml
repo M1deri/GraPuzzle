@@ -1,15 +1,44 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="GraPuzzle.MainPage"
-             Title="Menu"
-             BackgroundImageSource="menuzdj.png">
+<?xml version="1.0" encoding="utf-8" ?>
 
-    <VerticalStackLayout Spacing="20" Padding="40" VerticalOptions="Center">
-        <Label Text="PUZZLE GAME" FontSize="32" HorizontalOptions="Center" />
+<!-- Główna strona menu gry -->
+<ContentPage
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    x:Class="GraPuzzle.MainPage"
 
+    <!-- Tytuł strony -->
+    Title="Menu"
 
-        <Button  Clicked="OnPlayClicked" ImageSource="przycisk_play.png" BackgroundColor="Transparent" WidthRequest="400" HeightRequest="200"/>
+    <!-- Tło strony -->
+    BackgroundImageSource="menuzdj.png">
+
+    <!-- Główny układ pionowy -->
+    <VerticalStackLayout
+        Spacing="20"
+        Padding="40"
+        VerticalOptions="Center">
+
+        <!-- Tytuł gry -->
+        <Label
+            Text="PUZZLE GAME"
+            FontSize="32"
+            HorizontalOptions="Center" />
+
+        <!-- Przycisk rozpoczęcia gry -->
+        <Button
+
+            <!-- Obsługa kliknięcia -->
+            Clicked="OnPlayClicked"
+
+            <!-- Obraz przycisku -->
+            ImageSource="przycisk_play.png"
+
+            <!-- Przezroczyste tło -->
+            BackgroundColor="Transparent"
+
+            <!-- Rozmiar przycisku -->
+            WidthRequest="400"
+            HeightRequest="200" />
 
     </VerticalStackLayout>
 
