@@ -1,23 +1,34 @@
 namespace GraPuzzle;
 
+// Logika pokoju: Sypialnia (zagadka obrazów)
 public partial class Sypialnia : ContentPage
 {
-    // Prawidłowa kolejność: Kruk (1) → Jeleń (2) → Koza (3)
+    // Poprawna sekwencja kliknięć obrazów
     private readonly List<string> _correctSequence = new() { "Raven", "Deer", "Goat" };
-    private readonly List<string> _playerSequence  = new();
+
+    // Aktualna sekwencja gracza
+    private readonly List<string> _playerSequence = new();
+
+    // Flaga ukończenia zagadki
     private bool _puzzleSolved = false;
 
+    // Konstruktor strony
     public Sypialnia()
     {
         InitializeComponent();
     }
 
-    // ── KLIKNIĘCIA OBRAZÓW ──────────────────────────────────────────────
+    // ───────────────────────────────
+    // KLIKNIĘCIA OBRAZÓW
+    // ───────────────────────────────
 
     private async void OnRavenClicked(object sender, EventArgs e)
     {
         if (_puzzleSolved) return;
-        await RegisterClick("Raven", RavenHighlight,
+
+        await RegisterClick(
+            "Raven",
+            RavenHighlight,
             "Kruk",
             "Czarny kruk wpatruje się w ciebie martwym wzrokiem.\nJego pióra lśnią w blasku księżyca.");
     }
@@ -25,7 +36,10 @@ public partial class Sypialnia : ContentPage
     private async void OnDeerClicked(object sender, EventArgs e)
     {
         if (_puzzleSolved) return;
-        await RegisterClick("Deer", DeerHighlight,
+
+        await RegisterClick(
+            "Deer",
+            DeerHighlight,
             "Jeleń",
             "Poroże jelenia rzuca długi cień na ścianę.\nSkóra zwierzęcia wygląda niemal jak żywa.");
     }
@@ -33,47 +47,69 @@ public partial class Sypialnia : ContentPage
     private async void OnGoatClicked(object sender, EventArgs e)
     {
         if (_puzzleSolved) return;
-        await RegisterClick("Goat", GoatHighlight,
+
+        await RegisterClick(
+            "Goat",
+            GoatHighlight,
             "Koza",
             "Koza ma dziwnie ludzkie oczy.\nCzujesz się obserwowany.");
     }
 
-    // ── LOGIKA ZAGADKI ──────────────────────────────────────────────────
+    // ───────────────────────────────
+    // LOGIKA ZAGADKI
+    // ───────────────────────────────
 
-    private async Task RegisterClick(string animal, BoxView highlight, string title, string description)
+    private async Task RegisterClick(
+        string animal,
+        BoxView highlight,
+        string title,
+        string description)
     {
-        // Pokaż opis obrazu
+        // Pokazanie opisu obiektu
         await DisplayAlert(title, description, "OK");
 
-        // Jeśli ten obraz już jest w sekwencji — reset
+        // Jeśli już kliknięto ten obiekt → reset
         if (_playerSequence.Contains(animal))
         {
-            await DisplayAlert("🔄 Reset", "Coś zachrzęściło... Obrazy wróciły do poprzedniego stanu.", "OK");
+            await DisplayAlert(
+                "🔄 Reset",
+                "Coś zachrzęściło... Obrazy wróciły do poprzedniego stanu.",
+                "OK");
+
             ResetSequence();
             return;
         }
 
-        // Dodaj do sekwencji i podświetl
+        // Dodanie do sekwencji
         _playerSequence.Add(animal);
+
+        // Podświetlenie obiektu
         highlight.IsVisible = true;
+
         UpdateSequenceLabel();
 
-        // Sprawdź czy kolejność jest poprawna na bieżąco
+        // Sprawdzenie poprawności bieżącego kroku
         int step = _playerSequence.Count - 1;
+
         if (_playerSequence[step] != _correctSequence[step])
         {
-            await DisplayAlert("❌ Błąd", "Usłyszałeś cichy trzask.\nCoś jest nie tak z kolejnością...", "OK");
+            await DisplayAlert(
+                "❌ Błąd",
+                "Usłyszałeś cichy trzask.\nCoś jest nie tak z kolejnością...",
+                "OK");
+
             ResetSequence();
             return;
         }
 
-        // Sprawdź czy cała sekwencja gotowa
+        // Sprawdzenie ukończenia zagadki
         if (_playerSequence.Count == _correctSequence.Count)
         {
             await SolveAsync();
         }
     }
 
+    // Rozwiązanie zagadki
     private async Task SolveAsync()
     {
         _puzzleSolved = true;
@@ -81,21 +117,26 @@ public partial class Sypialnia : ContentPage
 
         await DisplayAlert(
             "✨ Sukces!",
-            "Obrazy lekko przesunęły się ze ściany.\nZa jeleniem kryła się mała wnęka — a w niej...\nStary, zardzewiały klucz!",
+            "Obrazy przesunęły się na ścianie.\nZa jeleniem była wnęka, a w niej...\nstary, zardzewiały klucz!",
             "OK");
 
+        // Dodanie przedmiotu do ekwipunku
         Inventory.Add("Heart Key");
     }
 
+    // Reset sekwencji
     private void ResetSequence()
     {
         _playerSequence.Clear();
+
         RavenHighlight.IsVisible = false;
-        DeerHighlight.IsVisible  = false;
-        GoatHighlight.IsVisible  = false;
+        DeerHighlight.IsVisible = false;
+        GoatHighlight.IsVisible = false;
+
         UpdateSequenceLabel();
     }
 
+    // Aktualizacja debugowego wyświetlacza sekwencji
     private void UpdateSequenceLabel()
     {
         if (_playerSequence.Count == 0)
@@ -113,10 +154,13 @@ public partial class Sypialnia : ContentPage
 
         SequenceLabel.Text = "Kolejność: " +
             string.Join(" → ", _playerSequence.Select(a => names[a]));
+
         SequenceLabel.IsVisible = true;
     }
 
-    // ── NAWIGACJA ───────────────────────────────────────────────────────
+    // ───────────────────────────────
+    // NAWIGACJA
+    // ───────────────────────────────
 
     private async void OnRightArrowClicked2(object sender, EventArgs e)
     {
