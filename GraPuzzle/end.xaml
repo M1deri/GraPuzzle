@@ -1,12 +1,32 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Ekran końcowy gry -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.end"
              Title="end"
              BackgroundImageSource="zadrzwiamiend.png">
-    <VerticalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <HorizontalStackLayout VerticalOptions="Center" HorizontalOptions="Center">
-        <Label Text="The End?" FontSize="Large" TextColor="White" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+
+    <!-- Główny układ wyśrodkowany -->
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="Center">
+
+        <!-- Dodatkowy kontener poziomy (zbędny, ale utrzymany z projektu) -->
+        <HorizontalStackLayout
+            VerticalOptions="Center"
+            HorizontalOptions="Center">
+
+            <!-- Tekst końcowy gry -->
+            <Label
+                Text="The End?"
+                FontSize="Large"
+                TextColor="White"
+                HorizontalTextAlignment="Center"
+                VerticalTextAlignment="Center"/>
+
         </HorizontalStackLayout>
+
     </VerticalStackLayout>
+
 </ContentPage>
