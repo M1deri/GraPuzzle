@@ -3,119 +3,141 @@ using System.Collections.Generic;
 
 namespace GraPuzzle;
 
+// PokÃ³j dzieciÄ™cy â€“ logika zagadki
 public partial class dzieckopokoj : ContentPage
 {
+    // Liczniki klikniÄ™Ä‡ na obiektach
     private int blocksClicks = 0;
     private int bearClicks = 0;
     private int tableClicks = 0;
     private int chestClicks = 0;
 
+    // Flaga czy zagadka zostaÅ‚a rozwiÄ…zana
     private bool puzzleSolved = false;
 
+    // Konstruktor strony
     public dzieckopokoj()
     {
         InitializeComponent();
     }
 
+    // Sprawdzenie poprawnej sekwencji klikniÄ™Ä‡
     private async Task CheckPuzzle()
     {
-        if (blocksClicks == 1 && bearClicks == 3 && tableClicks == 4 && chestClicks == 5)
+        if (blocksClicks == 1 &&
+            bearClicks == 3 &&
+            tableClicks == 4 &&
+            chestClicks == 5)
         {
             puzzleSolved = true;
-            await DisplayAlert("Sukces!", "Zdoby³eœ klucz", "OK");
+
+            await DisplayAlert("Sukces!", "ZdobyÅ‚eÅ› klucz", "OK");
+
+            // Dodanie przedmiotu do ekwipunku
             Inventory.Add("Baby Key");
         }
     }
 
+    // KlikniÄ™cie w klocki
     private async void OnBlocksClicked(object sender, EventArgs e)
     {
         if (puzzleSolved)
             return;
 
         blocksClicks++;
+
         if (blocksClicks > 1)
         {
-            await DisplayAlert("B³¹d", "Ju¿ nic sie nie dzieje", "OK");
+            await DisplayAlert("BÅ‚Ä…d", "JuÅ¼ nic siÄ™ nie dzieje", "OK");
             blocksClicks = 1;
         }
         else
         {
-            await DisplayAlert("Klocki", "Le¿¹ na pod³odze...", "OK");
+            await DisplayAlert("Klocki", "LeÅ¼Ä… na podÅ‚odze...", "OK");
         }
 
         await CheckPuzzle();
     }
 
+    // KlikniÄ™cie w misia
     private async void OnBearClicked(object sender, EventArgs e)
     {
         if (puzzleSolved)
             return;
 
         bearClicks++;
+
         if (bearClicks > 3)
         {
-            await DisplayAlert("B³¹d", "Ju¿ nic sie nie dzieje", "OK");
+            await DisplayAlert("BÅ‚Ä…d", "JuÅ¼ nic siÄ™ nie dzieje", "OK");
             bearClicks = 3;
         }
         else
         {
-            await DisplayAlert("Miœ", "Wygl¹da trochê dziwnie...", "OK");
+            await DisplayAlert("MiÅ›", "WyglÄ…da trochÄ™ dziwnie...", "OK");
         }
 
         await CheckPuzzle();
     }
 
+    // KlikniÄ™cie w stÃ³Å‚
     private async void OnTableClicked(object sender, EventArgs e)
     {
         if (puzzleSolved)
             return;
 
         tableClicks++;
+
         if (tableClicks > 4)
         {
-            await DisplayAlert("B³¹d", "Ju¿ nic sie nie dzieje", "OK");
+            await DisplayAlert("BÅ‚Ä…d", "JuÅ¼ nic siÄ™ nie dzieje", "OK");
             tableClicks = 4;
         }
         else
         {
-            await DisplayAlert("Stó³", "Coœ tu by³o u¿ywane...", "OK");
+            await DisplayAlert("StÃ³Å‚", "CoÅ› tu byÅ‚o uÅ¼ywane...", "OK");
         }
 
         await CheckPuzzle();
     }
 
+    // KlikniÄ™cie w skrzyniÄ™
     private async void OnChestClicked(object sender, EventArgs e)
     {
         if (puzzleSolved)
         {
-            await DisplayAlert("Skrzynia", "Ju¿ masz klucz!", "OK");
+            await DisplayAlert("Skrzynia", "JuÅ¼ masz klucz!", "OK");
             return;
         }
 
         chestClicks++;
+
         if (chestClicks > 5)
         {
-            await DisplayAlert("B³¹d", "Ju¿ nic sie nie dzieje", "OK");
+            await DisplayAlert("BÅ‚Ä…d", "JuÅ¼ nic siÄ™ nie dzieje", "OK");
             chestClicks = 5;
         }
         else
         {
-            await DisplayAlert("Skrzynia", "Zamkniêta...", "OK");
+            await DisplayAlert("Skrzynia", "ZamkniÄ™ta...", "OK");
         }
 
         await CheckPuzzle();
     }
 
+    // PrzejÅ›cie do poprzedniego pokoju
     private async void OnLeftArrowClicked4(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new Puzzle1());
     }
 
+    // PrzejÅ›cie do kolejnego pokoju
     private async void OnRightArrowClicked4(object sender, EventArgs e)
     {
         await Navigation.PushAsync(new piwnica_wejscie());
     }
 
+    // Otwarcie ekwipunku
     private async void OnInventoryClicked(object sender, EventArgs e)
     {
         await Navigation.PushModalAsync(new InventoryPage());
