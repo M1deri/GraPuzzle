@@ -1,28 +1,34 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Scena: podziemia / rozkopana piwnica -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.piwnicaziemia"
              Title="piwnicaziemia"
              BackgroundImageSource="piwnicarozkopanie.png">
+
+    <!-- Układ siatki -->
     <Grid>
 
-        
-
+        <!-- PRZYCISK: powrót -->
         <Button ImageSource="back_button.png"
-             BackgroundColor="Transparent"
-             HorizontalOptions="Start"
-             VerticalOptions="Start"
-             WidthRequest="80"
-             HeightRequest="80"
+                BackgroundColor="Transparent"
+                HorizontalOptions="Start"
+                VerticalOptions="Start"
+                WidthRequest="80"
+                HeightRequest="80"
                 Clicked="Button_Clicked_1"/>
 
+        <!-- PRZYCISK: ekwipunek -->
         <Button ImageSource="inventory_button.png"
-             BackgroundColor="Transparent"
-             HorizontalOptions="End"
-             VerticalOptions="Start"
-             WidthRequest="80"
-             HeightRequest="80"
-             Clicked="OnInventoryClicked"/>
+                BackgroundColor="Transparent"
+                HorizontalOptions="End"
+                VerticalOptions="Start"
+                WidthRequest="80"
+                HeightRequest="80"
+                Clicked="OnInventoryClicked"/>
+
+        <!-- INTERAKTYWNY obszar (np. wykop / ukryty obiekt / przejście) -->
         <Button
             BackgroundColor="Transparent"
             Clicked="Button_Clicked"
@@ -30,4 +36,5 @@
             HeightRequest="300"/>
 
     </Grid>
+
 </ContentPage>
