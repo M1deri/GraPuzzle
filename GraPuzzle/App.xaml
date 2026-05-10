@@ -1,27 +1,56 @@
-﻿<?xml version = "1.0" encoding = "UTF-8" ?>
-<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:local="clr-namespace:GraPuzzle"
-             x:Class="GraPuzzle.App">
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Główna konfiguracja aplikacji .NET MAUI -->
+<Application
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:GraPuzzle"
+    x:Class="GraPuzzle.App">
+
+    <!-- Zasoby aplikacji: kolory i style -->
     <Application.Resources>
+
+        <!-- Główny kolor używany w grze -->
         <Color x:Key="PuzzleColor">#4F46E5</Color>
 
-
+        <!-- Styl przycisków puzzli -->
         <Style x:Key="PuzzleButtonStyle" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="{StaticResource PuzzleColor}" />
+
+            <!-- Kolor tła przycisku -->
+            <Setter Property="BackgroundColor"
+                    Value="{StaticResource PuzzleColor}" />
+
+            <!-- Kolor tekstu -->
             <Setter Property="TextColor" Value="White" />
+
+            <!-- Rozmiar czcionki -->
             <Setter Property="FontSize" Value="22" />
+
+            <!-- Zaokrąglenie rogów -->
             <Setter Property="CornerRadius" Value="20" />
+
+            <!-- Wysokość przycisku -->
             <Setter Property="HeightRequest" Value="70" />
+
+            <!-- Szerokość przycisku -->
             <Setter Property="WidthRequest" Value="70" />
         </Style>
 
-
+        <!-- Styl przycisku resetowania gry -->
         <Style x:Key="ResetButtonStyle" TargetType="Button">
+
+            <!-- Czerwone tło -->
             <Setter Property="BackgroundColor" Value="#DC2626" />
+
+            <!-- Biały kolor tekstu -->
             <Setter Property="TextColor" Value="White" />
+
+            <!-- Zaokrąglone rogi -->
             <Setter Property="CornerRadius" Value="15" />
+
+            <!-- Pogrubiony tekst -->
             <Setter Property="FontAttributes" Value="Bold" />
         </Style>
+
     </Application.Resources>
 </Application>
