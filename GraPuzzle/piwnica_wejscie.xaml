@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8" ?>
+
+<!-- Wejście do piwnicy (scena gry) -->
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GraPuzzle.piwnica_wejscie"
              Title="piwnica_wejscie"
              BackgroundImageSource="piwnica2.png">
+
+    <!-- Układ siatki dla elementów interfejsu -->
     <Grid>
 
+        <!-- STRZAŁKA: powrót w lewo -->
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
                 HorizontalOptions="Start"
@@ -15,6 +20,7 @@
                 Rotation="180"
                 Clicked="OnLeftArrowClicked3"/>
 
+        <!-- STRZAŁKA: przejście w prawo -->
         <Button ImageSource="strzalka.png"
                 BackgroundColor="Transparent"
                 HorizontalOptions="End"
@@ -22,7 +28,8 @@
                 WidthRequest="60"
                 HeightRequest="60"
                 Clicked="OnRightArrowClicked3"/>
-        
+
+        <!-- PRZYCISK: powrót -->
         <Button ImageSource="back_button.png"
                 BackgroundColor="Transparent"
                 HorizontalOptions="Start"
@@ -30,6 +37,7 @@
                 WidthRequest="80"
                 HeightRequest="80"/>
 
+        <!-- PRZYCISK: ekwipunek -->
         <Button ImageSource="inventory_button.png"
                 BackgroundColor="Transparent"
                 HorizontalOptions="End"
@@ -37,13 +45,14 @@
                 WidthRequest="80"
                 HeightRequest="80"
                 Clicked="OnInventoryClicked"/>
+
+        <!-- INTERAKTYWNY obszar (np. ukryty obiekt w scenie) -->
         <Button
-        BackgroundColor="Transparent"
-        Clicked="Button_Clicked"
+            BackgroundColor="Transparent"
+            Clicked="Button_Clicked"
             WidthRequest="130"
             HeightRequest="300"/>
 
     </Grid>
-    
 
 </ContentPage>
