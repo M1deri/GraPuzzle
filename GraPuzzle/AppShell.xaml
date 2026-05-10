@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" ?>
+
+<!-- Główna konfiguracja nawigacji aplikacji -->
 <Shell
     x:Class="GraPuzzle.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
@@ -6,9 +8,16 @@
     xmlns:local="clr-namespace:GraPuzzle"
     Title="GraPuzzle">
 
+    <!-- Definicja głównej strony aplikacji -->
     <ShellContent
+
+        <!-- Tytuł zakładki/strony -->
         Title="Home"
+
+        <!-- Ustawienie strony MainPage jako zawartości -->
         ContentTemplate="{DataTemplate local:MainPage}"
+
+        <!-- Trasa nawigacyjna strony -->
         Route="MainPage" />
 
 </Shell>
